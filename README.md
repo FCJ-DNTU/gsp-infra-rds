@@ -71,7 +71,7 @@ Now we have to validate our configuration and plan it
 terraform plan
 ```
 
-Then tell Terraform apply the plan to deploy our infrastructure
+Then tell Terraform apply the plan to deploy our infrastructure (Terraform will ask you, just say "yes").
 
 ```bash
 terraform apply
@@ -79,7 +79,7 @@ terraform apply
 
 Result:
 
-**INSERT IMAGE HERE**
+![2024-10-07_221831](https://github.com/user-attachments/assets/2bc86038-345b-4588-ae82-54abeed1471d)
 
 ## 2 - Insert Data
 
@@ -90,27 +90,25 @@ chmod 400 key/key-name.pem
 scp -i key/key-name.pem -r insert-data ubuntu@"ec2-public-ipv4":/home/ubuntu
 ```
 
-**INSERT IMAGE HERE**
+![2024-10-07_222250](https://github.com/user-attachments/assets/646cf53d-01ab-4573-b261-c289bd7178f7)
 
-Connect to this EC2 Instance and check result
-
-**INSERT IMAGE HERE**
-
-Provide permission for script execution
+Connect to this EC2 Instance, check result and permission for script execution
 
 ```bash
 chmod 700 deploy.sh
 ```
 
+![2024-10-07_222344](https://github.com/user-attachments/assets/e473dbba-a9f4-43c7-ba89-2b4de12e0a8b)
+
 Replace RDS Endpoint in `deploy.sh`
 
-**INSERT IMAGE HERE**
+![2024-10-07_222801](https://github.com/user-attachments/assets/4ee3be1f-91f2-4996-b92c-7ff21aab3707)
 
 Now, you should run `deploy.sh`
 
-**INSERT IMAGE HERE**
+![2024-10-07_222801](https://github.com/user-attachments/assets/3f819cfb-c389-49a2-bd70-fcf7fe6b2607)
 
-**INSERT IMAGE HERE**
+![2024-10-07_223238](https://github.com/user-attachments/assets/5a7139ae-0705-4fdd-9c67-4cb0962bd400)
 
 ## 3 - Test result
 
@@ -120,7 +118,7 @@ Connect to MySQL Server in RDS
 mysql -h "you-rds-endpoint" -u admin -p
 ```
 
-**INSERT IMAGE HERE**
+![2024-10-07_223518](https://github.com/user-attachments/assets/be4ae0a2-01f7-49cd-b436-47d49372899d)
 
 Perform some query
 
@@ -133,7 +131,7 @@ SELECT * FROM Clients;
 SELECT * FROM Tables;
 ```
 
-**INSERT IMAGE HERE**
+![2024-10-07_223558](https://github.com/user-attachments/assets/58ff53a6-75fe-474a-9650-8052a5b169a7)
 
 ## 4 - Clean up resources
 
@@ -143,10 +141,10 @@ Change directory to `deploy-infrastructure`
 cd deploy-infrastructure/
 ```
 
-Destroy resources
+Destroy resources (Terraform will ask you, just say "yes").
 
 ```bash
 terraform destroy
 ```
 
-**INSERT IMAGE HERE**
+![2024-10-07_225053](https://github.com/user-attachments/assets/4f3cef0e-5258-413b-88b8-c2ceba965a85)
