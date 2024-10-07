@@ -4,11 +4,11 @@
 
 # Set up ENV
 DB_HOST="your-rds-endpoint"
-DB_NAME="awsfcjuser"
+DB_NAME="fcjresbar"
 DB_USER="admin"
 
 # Update packages
-sudo yum update -y
+sudo apt update
 
 function checkCommand() {
   if command -v $1 &> /dev/null; then
@@ -20,7 +20,7 @@ function checkCommand() {
 }
 
 # Install MySQL Client
-sudo apt install mysql -y
+sudo apt install mysql-client -y
 
 ## Check mysql
 checkCommand mysql

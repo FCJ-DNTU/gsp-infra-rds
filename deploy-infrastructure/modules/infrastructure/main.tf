@@ -62,7 +62,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.mainvpc.id
   tags = {
     Name = "${var.network_root_name}-igw"
-    Type = "Internet_Gateway"
+    Type = "Internet-Gateway"
     Author = var.author
   }
 }
@@ -77,15 +77,15 @@ resource "aws_route_table" "public_route_table_1" {
     gateway_id = aws_internet_gateway.igw.id
   }
 
-  # var
+  # Local
   route {
     cidr_block = var.vpc_cidr
-    gateway_id = "var"
+    gateway_id = "local"
   }
 
   tags = {
     Name = "${var.network_root_name}-rtb-public"
-    Type = "Route_Table"
+    Type = "Route-Table"
     Author = var.author
   }
 }
@@ -93,15 +93,15 @@ resource "aws_route_table" "public_route_table_1" {
 resource "aws_route_table" "private_route_table_1" {
   vpc_id = aws_vpc.mainvpc.id
 
-  # var
+  # Local
   route {
     cidr_block = var.vpc_cidr
-    gateway_id = "var"
+    gateway_id = "local"
   }
 
   tags = {
     Name = "${var.network_root_name}-rtb-private"
-    Type = "Route_Table"
+    Type = "Route-Table"
     Author = var.author
   }
 }

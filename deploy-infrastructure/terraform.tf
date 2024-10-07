@@ -7,7 +7,7 @@ locals {
   vpc_cidr = "10.0.0.0/16"
   db_username = "admin"
   db_password = "letmein12345"
-  db_name = "awsfcjuser"
+  db_name = "fcjresbar"
   key_name = "general-use"
 }
 
