@@ -1,0 +1,12 @@
+node_modules
+
+.terraform
+.terraform.*
+terraform.*
+package-lock.json
+
+**/key/*
+
+# Exlude ignore
+!terraform.tf
+!README.md
