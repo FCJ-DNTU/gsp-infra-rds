@@ -17,7 +17,7 @@ resource "aws_db_subnet_group" "subnet_group" {
 
 ## Setup Multi-AZ DB Instance
 resource "aws_db_instance" "rds" {
-  identifier = "${lower(var.compute_root_name)}-db-instance"
+  identifier = "${lower(var.compute_root_name)}-rds-instance"
   engine = "mysql"
   engine_version = "8.0.35"
   instance_class = "db.m5.large"
@@ -34,7 +34,7 @@ resource "aws_db_instance" "rds" {
   vpc_security_group_ids = var.security_group_ids
   
   tags = {
-    Name = "${lower(var.compute_root_name)}-db-instance"
+    Name = "${lower(var.compute_root_name)}-rds-instance"
     Type = "RDS-Instance"
     DatabaseEngine = "MySQL"
     Author = var.author

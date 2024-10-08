@@ -9,7 +9,7 @@ resource "aws_instance" "my_server" {
   vpc_security_group_ids = var.security_group_ids
 
   tags = {
-    Name = "${var.compute_root_name}_my_server"
+    Name = "${var.compute_root_name}-my-server"
     Type = "EC2"
     Author = var.author
   }
