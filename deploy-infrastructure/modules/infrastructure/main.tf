@@ -4,7 +4,7 @@ resource "aws_vpc" "mainvpc" {
   enable_dns_hostnames = true
   enable_dns_support = true
   tags = {
-    Name = var.network_root_name
+    Name = "${var.network_root_name}-vpc"
     Type = "VPC"
     Author = var.author
   }
