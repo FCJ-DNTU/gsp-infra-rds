@@ -8,6 +8,14 @@ module "infrastructure" {
   author = local.author
 }
 
+module "role" {
+  source = "./modules/role"
+
+  # Input
+  region = local.region
+  author = local.author
+}
+
 module "security" {
   source = "./modules/security"
 
@@ -41,6 +49,19 @@ module "compute" {
   key_name = local.key_name
   author = local.author
   compute_root_name = local.compute_root_name
-  subnet_id = module.infrastructure.subnet_public1_id
+  vpc_id = module.infrastructure.vpc_id
+  public_subnet_1_id = module.infrastructure.subnet_public1_id
+  public_subnet_2_id = module.infrastructure.subnet_public2_id
   security_group_ids = [ module.security.public_sg_id ]
+}
+
+module "others" {
+  source = "./modules/others"
+
+  # Input
+  region = local.region
+  author = local.author
+  vpc_id = module.infrastructure.vpc_id
+  service_discovery_namespace_name = local.service_discovery_namespace_name
+  service_discovery_service_name = local.service_discovery_service_name
 }

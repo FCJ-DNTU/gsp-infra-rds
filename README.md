@@ -9,11 +9,11 @@
 
 # Note
 
-- If you want to change something, you should look into `deploy-infrastructure/terraform.tf`. All of variables are setup in there.
+- If you want to change something, you should look into `deploy-infrastructure/terraform.tf`. All of variables are setup in there. Pay attention to these local variables
 
 ```hcl
 locals {
-  region = "ap-southeast-1"
+  region = "ap-southeast-2"
   author = "FCJ-DNTU"
   network_root_name = "FCJ-Lab"
   compute_root_name = "FCJ-Lab"
@@ -22,6 +22,8 @@ locals {
   db_password = "letmein12345"
   db_name = "fcjresbar"
   key_name = "general-use"
+  service_discovery_namespace_name = "fcjresbar.internal"
+  service_discovery_service_name = "backend"
 }
 ```
 

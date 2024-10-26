@@ -48,3 +48,12 @@ output "igw_id" {
 output "igw_arn" {
   value = aws_internet_gateway.igw.arn
 }
+
+# NAT Gateway
+output "nat_gw_id" {
+  value = aws_internet_gateway.igw.id
+}
+
+output "nat_gw_arn" {
+  value = aws_internet_gateway.igw.arn
+}

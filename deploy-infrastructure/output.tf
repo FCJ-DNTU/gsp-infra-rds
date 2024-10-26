@@ -67,3 +67,47 @@ output "db_instance_identifier" {
 output "db_instance_endpoint" {
   value = module.rds.db_instance_endpoint
 }
+
+# Output of ALB
+output "alb_id" {
+  value = module.compute.alb_id
+}
+
+output "alb_arn" {
+  value = module.compute.alb_arn
+}
+
+output "alb_endpoint" {
+  value = module.compute.alb_endpoint
+}
+
+# Output of ECS
+output "ecs_cluster_id" {
+  value = module.compute.ecs_cluster_id
+}
+
+output "ecs_cluster_arn" {
+  value = module.compute.ecs_cluster_arn
+}
+
+output "ecs_cluster_name" {
+  value = module.compute.ecs_cluster_name
+}
+
+# Output of Roles
+output "code_deploy_role_id" {
+  value = module.role.code_deploy_role_id
+}
+
+output "code_deploy_role_arn" {
+  value = module.role.code_deploy_role_arn
+}
+
+# Output of Other services
+output "sd_namespace_id" {
+  value = module.others.sd_namespace_id
+}
+
+output "sd_service_id" {
+  value = module.others.sd_service_id
+}

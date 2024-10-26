@@ -18,8 +18,18 @@ variable "compute_root_name" {
   type = string
 }
 
-variable "subnet_id" {
-  description = "Id of subnet"
+variable "vpc_id" {
+  description = "Id of VPC"
+  type = string
+}
+
+variable "public_subnet_1_id" {
+  description = "Id of public subnet"
+  type = string
+}
+
+variable "public_subnet_2_id" {
+  description = "Id of public subnet"
   type = string
 }
 
