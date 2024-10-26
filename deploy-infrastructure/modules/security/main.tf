@@ -142,6 +142,17 @@ resource "aws_vpc_security_group_ingress_rule" "private_sg_inbound_2" {
   }
 }
 
+resource "aws_vpc_security_group_ingress_rule" "private_sg_inbound_3" {
+  security_group_id = aws_security_group.private_sg.id
+  referenced_security_group_id = aws_security_group.private_sg.id
+  ip_protocol = "-1"
+  tags = {
+    Name = "${var.network_root_name}-sg-private-inbound-rule3"
+    Type = "Security-Group-Inbound-Rule"
+    Author = var.author
+  }
+}
+
 resource "aws_vpc_security_group_egress_rule" "private_sg_outbound" {
   security_group_id = aws_security_group.private_sg.id
   cidr_ipv4 = "0.0.0.0/0"
